@@ -7,7 +7,7 @@
   "author": "Anton Kosykh <kelin2025@yandex.ru>",
   "license": "MIT",
   "dependencies": {
-    "schematic-fluent": "^0.4.1"
+    "schematic-fluent": "^0.5.0"
   },
   "scripts": {
     "build": "babel index.js --out-file=index.dist.js"
