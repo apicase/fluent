@@ -4,9 +4,9 @@ Fluent interface for Apicase services
 
 ## Benefits
 
-- Like Apicase and unlike another solutions, it's not API-specific
-- Highly customizable. You can easily add your own methods and even whole schemas (based on [schematic-fluent](https://github.com/Kelin2025/schematic-fluent))
-- Fluent instance is **immutable** and don't modify current instance but returns the new one
+- Like Apicase and unlike another solutions, it's **not API-specific**
+- Highly **customizable**. You can easily add your own methods and even whole schemas (based on [schematic-fluent](https://github.com/Kelin2025/schematic-fluent))
+- Fluent instance is **immutable** and doesn't modify current instance but returns the new one
 
 ## Installation
 
