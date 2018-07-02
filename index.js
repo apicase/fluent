@@ -3,6 +3,11 @@ const fluentApicase = schema => {
     immutable: true,
     methods: {
       on: ({ service }) => (evt, cb) => {
+        if (process.env.NODE_ENV === "development" && !service) {
+          throw new ReferenceError(
+            "[@apicase/fluent.on] You have to pass service before adding events. If you have services to pass you can write .service(new ApiService)"
+          )
+        }
         service.on(evt, cb)
         return {}
       },
@@ -31,6 +36,8 @@ const fluentApicase = schema => {
           return res
         }, hooks),
 
+      adapter: () => adapter => ({ adapter }),
+
       service: () => service => ({ service })
     },
     executors: {
@@ -47,8 +54,7 @@ const fluentApicase = schema => {
         service.doUniqueRequest(payload)
     },
     defaults: () => ({
-      hooks: {},
-      service: new Object()
+      hooks: {}
     })
   })
 
