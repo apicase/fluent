@@ -66,7 +66,36 @@ const addToken = ({ payload, next }) => {
 const WithAuth = FluentFetch.on("done", console.log).hook("before", addToken)
 ```
 
-### All options
+## Available methods
+
+### `apicaseFluent()` methods
+
+`apicaseFluent` function just extends schema with the following methods:
+```js
+Root
+  // Adapter and service
+  .adapter(SomeAdapter)
+  .service(SomeService)
+
+  // Meta info
+  .meta('foo', 'bar')
+  .meta({ foo: 'bar' })
+
+  // Listen to events (requires service)
+  .on('evtName', cb)
+
+  // Hook or a lot of hooks
+  .hook('hookType', cb)
+  .hooks({
+    done: cb,
+    fail: cb
+  })
+```
+
+### `fetchSchema` methods
+
+To reduce boilerplate code, we provide ready-to-use schema for fetch adapter.  
+Fetch schema has the following methods:
 
 ```js
 Root
