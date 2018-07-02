@@ -40,7 +40,9 @@ const fluentApicase = schema => {
 
       service: () => service => ({ service })
     },
-    executors: {
+    executors: {,
+      getPayload: payload => () => payload,
+
       getService: ({ service, ...payload }) => service.extend(payload),
 
       doRequest: ({ service, ...payload }) => service.doRequest(payload),

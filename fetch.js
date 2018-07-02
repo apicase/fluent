@@ -24,10 +24,8 @@ const fetchSchema = fluent({
     query: setOrMerge("query"),
     delete: setMethod("delete"),
     method: setProp("method"),
-    params: setOrMerge("params")
-  },
-  executors: {
-    getPayload: payload => () => payload
+    params: setOrMerge("params"),
+    headers: setOrMerge("headers")
   }
 })({ adapter: fetch })
 
