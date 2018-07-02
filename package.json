@@ -11,5 +11,8 @@
   },
   "scripts": {
     "build": "babel index.js --out-file=index.dist.js"
+  },
+  "peerDependencies": {
+    "@apicase/adapter-fetch": "^0.14.3"
   }
 }
