@@ -1,4 +1,5 @@
-import fluent from "schematic-fluent"
+const fetch = require("@apicase/adapter-fetch")
+const fluent = require("schematic-fluent")
 
 const setOrMerge = key => ctx => (...args) => ({
   [key]:
@@ -28,6 +29,6 @@ const fetchSchema = fluent({
   executors: {
     getPayload: payload => () => payload
   }
-})
+})({ adapter: fetch })
 
 module.exports = fetchSchema
